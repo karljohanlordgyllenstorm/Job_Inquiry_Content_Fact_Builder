@@ -1,21 +1,127 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Inquiry / Content Fact Builder | Karl-Johan Lord Gyllenstorm</title>
+    <title>Kunskapsbank & Verifierade Guider | Job Inquiry Content</title>
+    <meta name="description" content="En samling verifierade, faktabaserade guider och artiklar byggda med transparenta källor och hög E-E-A-T-standard.">
+    
+    <!-- Favicon (Inbäddad skarp SVG-ikon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- SEO / Schema.org Strukturdata -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Kunskapsbank och Verifierade Guider",
+      "description": "Faktagranskade guider och artiklar.",
+      "inLanguage": "sv"
+    }
+    </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased leading-relaxed">
-    <main class="max-w-3xl mx-auto px-4 py-12">
-        <div class="text-sm text-blue-600 font-semibold mb-2">Kunskapsbank &bull; Verifierad Guide</div>
-        <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">Välkommen till kunskapsbanken</h1>
-        <div class="flex items-center gap-3 pb-6 mb-8 border-b border-slate-200 text-sm text-slate-600">
-            <span>Faktagranskad och källbelagd</span>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased h-full flex flex-col justify-between">
+
+    <!-- Header / Hero -->
+    <header class="bg-white border-b border-slate-200 py-10 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-xs uppercase tracking-wider font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Verifierat Innehåll &bull; E-E-A-T</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mt-4 mb-3">Kunskapsbank</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">Utforska våra faktabaserade guider och rapporter. Sök direkt i innehållet nedan för att hitta det du söker.</p>
+            
+            <!-- Sökfält -->
+            <div class="mt-8 max-w-md mx-auto">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-slate-400">
+                        🔍
+                    </span>
+                    <input type="text" id="searchInput" placeholder="Sök bland artiklar och innehåll..." 
+                           class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-slate-800 placeholder-slate-400 shadow-sm transition">
+                </div>
+            </div>
         </div>
-        <article class="space-y-6 text-lg text-slate-700">
-            <p>Denna sida är under uppbyggnad och publiceras automatiskt via det interaktiva verktyget.</p>
-        </article>
+    </header>
+
+    <!-- Main Content / Artikelarkiv -->
+    <main class="max-w-4xl mx-auto px-4 py-12 flex-grow w-full">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl font-bold text-slate-900">Tillgängliga guider</h2>
+            <span id="resultCount" class="text-sm text-slate-500">Visar alla artiklar</span>
+        </div>
+
+        <!-- Grid med artiklar (Lägg till nya kort här efterhand som sidor genereras) -->
+        <div id="articleGrid" class="grid gap-6 md:grid-cols-2">
+            
+            <!-- Exempel på artikelkort 1 -->
+            <article class="article-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                        <span>Faktagranskad</span>
+                        <span>Stockholm</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">
+                        <a href="rorlaggare-stockholm.html" class="hover:text-blue-600 transition">Rörläggare Stockholm</a>
+                    </h3>
+                    <p class="text-slate-600 text-sm line-clamp-3">
+                        Säker Vatten-certifierad guide med 8 års erfarenhet av stambyten och värmepumpar i Stockholmsområdet.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs font-medium text-slate-500">Av Karl-Johan Lord Gyllenstorm</span>
+                    <a href="rorlaggare-stockholm.html" class="text-blue-600 hover:underline text-sm font-semibold">Läs guide &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Du kan enkelt lägga till fler kort här när fler sidor skapas -->
+
+        </div>
+
+        <!-- Meddelande om inga träffar -->
+        <div id="noResults" class="hidden text-center py-12 text-slate-500">
+            Inga artiklar matchade din sökning.
+        </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+        <div class="max-w-4xl mx-auto px-4 space-y-2">
+            <p>&copy; 2026 Karl-Johan Lord Gyllenstorm. Alla rättigheter reserverade.</p>
+            <p class="text-xs text-slate-400">Denna webbplats använder inte cookies eller samlar in personuppgifter (GDPR-kompatibel).</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript för live-sökning -->
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const articleCards = document.querySelectorAll('.article-card');
+        const noResults = document.getElementById('noResults');
+        const resultCount = document.getElementById('resultCount');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            articleCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+                resultCount.textContent = '0 träffar';
+            } else {
+                noResults.classList.add('hidden');
+                resultCount.textContent = `Visar ${visibleCount} artiklar`;
+            }
+        });
+    </script>
 </body>
 </html>
